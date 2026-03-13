@@ -494,7 +494,7 @@ def escribir_excel(df, ruta_salida='Zonning_Hoy.xlsx'):
         return False
 
 
-def generar_salida_semanal(empleados_por_dia, cuadrantes_por_dia, ruta_salida='Zonning_Semanal_Completo.xlsx'):
+def generar_salida_semanal(empleados_por_dia, cuadrantes_por_dia, ruta_salida, ruta_plantilla):
     """
     Genera un archivo Excel consolidado con una pestaña por día, usando estilos de Plantilla_Visual.xlsx
     
@@ -516,7 +516,7 @@ def generar_salida_semanal(empleados_por_dia, cuadrantes_por_dia, ruta_salida='Z
     
     try:
         # Cargar mapeo de estilos y workbook de la plantilla
-        mapping, wb = _leer_tabla_mapeo_estilos()
+        mapping, wb = _leer_tabla_mapeo_estilos(ruta_plantilla)
         
         # Limpiar hojas existentes (excepto Config_Formatos)
         for hoja in list(wb.sheetnames):
