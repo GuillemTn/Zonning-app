@@ -110,7 +110,8 @@ def procesar_pipeline(buffer_datos, buffer_horario, buffer_plantilla=None):
                 empleados_por_dia,
                 cuadrantes_por_dia,
                 ruta_salida=excel_buffer,
-                ruta_plantilla=buffer_plantilla if buffer_plantilla else 'Plantilla_Visual.xlsx'
+                ruta_plantilla=buffer_plantilla if buffer_plantilla else 'Plantilla_Visual.xlsx',
+                ruta_horario=buffer_horario
             )
             
             if exito:
